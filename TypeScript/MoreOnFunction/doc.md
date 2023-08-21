@@ -90,8 +90,17 @@ function firstElement(arr: any[]) {
 함수는 제 역할을 하지만, 아쉽게도 반환 타입이 `any` 입니다.
 함수가 배열 원소의 타입을 반환한다면 더 나을 것 같습니다.
 
-TypeScript에서, _제네릭_ 문법이 두 값 사이의 상관관계를 표현하기 위해서 사용됩니다.
+TypeScript에서, _제네릭_ 문법이 두 값 사이의 상관관계를 표현하기 위해서 사용됩니다. 
+우리는 함수 시그니처에서 *타입 매개변수*를 선언함으로서 그런 표현을 할 수 있습니다.
 
+```ts
+function firstElement<Type>(arr: Type[]): Type | undefined {
+  return arr[0];
+}
+```
+
+타입 매개변수 `Type`을 이 함수에 선언하고, 필요한 두 곳에 사용함으로써 우리는 함수의 입력 값(배열)과 출력(반환 값) 사이에 연결고리를 만들었습니다. 
+이제 우리가 이 함수를 호출할 때, 더 명확한 타입을 얻을 수 있습니다.
 
 ```ts
 const s: string = firstElement(["a", "b", "c"]);
@@ -99,6 +108,6 @@ const n: number = firstElement([1, 2, 3]);
 const u: never = firstElement([]);
 ```
 
-[](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
 
 > 출처 : [More on Functions](https://www.typescriptlang.org/ko/docs/handbook/2/functions.html)

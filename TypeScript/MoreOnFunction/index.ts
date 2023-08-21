@@ -30,5 +30,6 @@ function firstElement<T>(arr: T[]): T {
 }
 
 const s: string = firstElement(["a", "b", "c"]);
+console.log(s[3]);
 const n: number = firstElement([1, 2, 3]);
 const u: never = firstElement([]);
