@@ -110,4 +110,4 @@ const u: never = firstElement([]);
 
 
 
-> 출처 : [More on Functions](https://www.typescriptlang.org/ko/docs/handbook/2/functions.html)
+> 출처 : [More on Functions](https://www.typescriptlang.org/ko/docs/handbook/2/functions.html) 
